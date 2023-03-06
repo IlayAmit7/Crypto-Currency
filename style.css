@@ -1,0 +1,319 @@
+
+* {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+body {
+    text-align: center;
+    background-image: url("./assets/images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    color: white;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+
+}
+
+
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.activeNav {
+    text-decoration: underline white;
+    background-color: blue;
+}
+
+.logo>img {
+    height: 40px;
+    width: 40px;
+}
+
+#mainHeader {
+    color:black;
+    font-size: 4em;
+    margin: 10px 0;
+    text-align: left;
+}
+
+
+@media(min-width: 770px) {
+    nav {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: center;
+        margin-left: 10px;
+        margin-right: 10px;
+        flex-wrap: unset;
+    }
+}
+
+button {
+    font-family: inherit;
+}
+
+/* Home Section */
+.coin-card {
+    width: 180px;
+    height: 160px;
+    border: 1px solid blue;
+    display: inline-block;
+    border-radius: 50px;
+    margin: 50px;
+    padding: 50px;
+    overflow: hidden;
+
+}
+
+.coin-card>div {
+    margin: 10px;
+
+}
+
+.glass-effect {
+    background: linear-gradient(140deg, gray, white);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 8px 16px 0 black;
+    border: 0.5px solid gray;
+    border-radius: 30px;
+
+}
+
+
+.toggle {
+    cursor: pointer;
+}
+
+.load {
+    visibility: hidden;
+    margin-top: 5px;
+    width: 40px;
+    height: 40px;
+    animation: rotate--loader 1s infinite;
+}
+
+.loader {
+    animation: rotate--loader 1s infinite;
+}
+
+@keyframes rotate--loader {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.moreInfoContainer {
+    margin: 4px;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    color: orangered;
+    text-decoration: underline ;
+
+}
+
+input[type=search] {
+    background:gray;
+    color:white;
+    margin-bottom: 10px;
+
+}
+
+input[type=search]::placeholder {
+    color: gray;
+    text-align: center;
+}
+
+input {
+    border-radius: 4px;
+    border: none;
+}
+
+.moreInfoBtn {
+    letter-spacing: 0;
+    background: none;
+    border: none;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid grey;
+    color:aqua;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.moreInfoBtn:hover {
+    letter-spacing: 5px;
+    transition: 0.5s;
+    border-top: 1px solid sienna;
+    border-bottom: 1px solid sienna;
+    color:blueviolet
+}
+
+/* Modal */
+
+.modal {
+    --gap: 15px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: var(--gap);
+    background: black;
+    color: black;
+}
+
+.modal-card {
+    width: 80px;
+    height: 70px;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+}
+
+.card-title {
+    margin-top: 0;
+}
+
+.modal__inner {
+    background-image: url("/assets/images/modal-background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    max-width: 800px;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.modal__top {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-weight: 600;
+    -webkit-text-stroke: 1px black;
+    background-image: url("/assets/images/modal-background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.modal__title {
+    flex-grow: 1;
+    padding: 0 var(--gap);
+    padding-top: 10px;
+    font-size: 20px;
+    height: 30px;
+}
+
+.modal__close {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: var(--gap);
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.modal__content {
+    margin-top: 30px;
+    justify-content: center;
+    padding: 0 var(--gap);
+    line-height: 1.5;
+    display: flex;
+}
+
+.card-body>div>i {
+    color: black;
+}
+
+#symbolDiv{
+    color: red;
+}
+
+#coinNameDiv{
+    color: blue;
+
+}
+
+#coinIdDiv{
+    color: green;
+
+}
+
+.modal__bottom {
+    text-align: right;
+    padding: 0 var(--gap) var(--gap) var(--gap);
+    margin-top: 25px;
+}
+
+.modal__button {
+    letter-spacing: 0;
+    background: none;
+    border: none;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid gray;
+    color: white;
+    cursor: pointer;
+    transition: 0.5s;
+    font-size: 18px;
+}
+
+.modal__button:not(:last-child) {
+    margin-right: var(--gap);
+}
+
+.modal__button:hover {
+    border: 1px solid white;
+    transition: 0.5s;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+}
+
+
+/* About Section */
+
+#allInfo {
+    margin: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color:black ;
+    font-size: x-large;
+}
+
+#mainContainer {
+    color: black;
+    font-size: x-large;
+}
+
+
+
+/* Live Reports */
+.canvasjs-chart-container {
+    margin-top: 50px;
+}
